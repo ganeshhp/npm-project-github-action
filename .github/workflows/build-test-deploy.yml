@@ -37,8 +37,8 @@ jobs:
       id-token: write
 
     environment: 
-    name: production
-    url: ${{ steps.deployment.outputs.page_url }}
+      name: production
+      url: ${{ steps.deployment.outputs.page_url }}
 
     steps:
       - name: checkout repo
