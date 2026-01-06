@@ -3,7 +3,7 @@ name: build-test-deploy
 on: push
 jobs:
   build:
-    runs-on: self-hosted
+    runs-on: ubuntu-instance
 
     steps:
       - name: checkout repo
@@ -17,7 +17,7 @@ jobs:
 
   test:
     needs: build
-    runs-on: self-hosted
+    runs-on: ubuntu-instance
     steps:
       - name: checkout repo
         uses: actions/checkout@v4
@@ -30,7 +30,7 @@ jobs:
 
   deploy:
     needs: test
-    runs-on: self-hosted
+    runs-on: ubuntu-instance
     permissions:
       contents: write
       pages: write
